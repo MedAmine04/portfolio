@@ -1,0 +1,125 @@
+@import 'tailwindcss';
+
+/*
+  Bento portfolio — layout concept: a calm grid of rounded cards on a cool grey ground.
+  One accent (Majorelle cobalt, from the Marrakech garden of the same name) carries every action.
+  Display: Bricolage Grotesque · Body: Instrument Sans · Labels and data: JetBrains Mono.
+*/
+:root {
+  color-scheme: light;
+  --bg: #e6e9ee;
+  --card: #ffffff;
+  --ink: #0d1117;
+  --mute: #566170;
+  --line: #d6dbe3;
+  --accent: #2b44e6;
+  --accent-ink: #ffffff;
+  --accent-soft: #e6eaff;
+  --photo: #2b44e6;
+  --good: #17905a;
+  --font-display: 'Bricolage Grotesque', 'Helvetica Neue', Arial, sans-serif;
+  --font-body: 'Instrument Sans', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-code: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    color-scheme: dark;
+    --bg: #0a0c10;
+    --card: #12151b;
+    --ink: #eceff4;
+    --mute: #98a2b1;
+    --line: #232832;
+    --accent: #7c93ff;
+    --accent-ink: #0a0c10;
+    --accent-soft: #1c2340;
+    --photo: #1b2a8f;
+    --good: #3dd68c;
+  }
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --bg: #0a0c10;
+  --card: #12151b;
+  --ink: #eceff4;
+  --mute: #98a2b1;
+  --line: #232832;
+  --accent: #7c93ff;
+  --accent-ink: #0a0c10;
+  --accent-soft: #1c2340;
+  --photo: #1b2a8f;
+  --good: #3dd68c;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-card: var(--card);
+  --color-ink: var(--ink);
+  --color-mute: var(--mute);
+  --color-line: var(--line);
+  --color-accent: var(--accent);
+  --color-accent-ink: var(--accent-ink);
+  --color-accent-soft: var(--accent-soft);
+  --color-photo: var(--photo);
+  --color-good: var(--good);
+  --font-display: var(--font-display);
+  --font-sans: var(--font-body);
+  --font-mono: var(--font-code);
+}
+
+html {
+  background: var(--bg);
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+[id] {
+  scroll-margin-top: 7rem;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+}
+
+.dots {
+  background-image: radial-gradient(rgba(255, 255, 255, 0.22) 1px, transparent 1.4px);
+  background-size: 18px 18px;
+}
+
+.no-scrollbar {
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
